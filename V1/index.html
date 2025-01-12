@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="yandex-verification" content="25396a342f9c8f7b" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>School509Coin | Монета Школы 509</title>
+</head>
+<body>
+    <div id="player-container">
+        <h2 id="track-title" class="wh">Трек: (не выбрано)</h2>
+        <audio id="audio-player" controls autoplay>
+            <source id="audio-source" src="" type="audio/mpeg">
+            Ваш браузер не поддерживает аудиоплеер.
+        </audio>
+        <button id="next-track">Сменить трек</button>
+    </div>
+    <div class="game">
+        <div class="header">
+            <img src="./src/img/favicon.png" alt="coin">
+            <h2 class="score" id="score">52</h2>
+        </div>
+        <div class="circle">
+            <img id="circle" src="./src/img/RIA.png" alt="teacher">
+        </div>
+        <div id="energy-container">
+            <span id="energy-text">Энергия: 100/100</span>
+        </div>
+        <br>
+        <div id="ton-connect"></div>
+    </div>
+    <div class="sticky-footer">
+        <a href="./">Главная</a>
+        <div class="divider"></div>
+        <a href="./donate.html">Поддержать автора копейкой</a>
+        <div class="divider"></div>
+        <a href="./bot.html">О боте</a>
+    </div>
+    <script src="app.js" defer></script>
+    <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script defer>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MKPFFJFZ');</script>
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js" defer></script>
+    <script>
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'https://school509coin.web.app/tonconnect-manifest.json',
+            buttonRootId: 'ton-connect',
+        });
+
+        async function connectToWallet() {
+            try {
+                const connectedWallet = await tonConnectUI.connectWallet();
+                console.log(connectToWallet);
+            } catch (error) {
+                console.error('Error connecting wallet:', error);
+            }
+        }
+    </script>
+    <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(99422575, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true,
+         ecommerce:"container"
+    });
+    </script>
+    <noscript>
+        Для работы приложения требуется включить JavaScript в настройках браузера!
+        <div><img src="https://mc.yandex.ru/watch/99422575" style="position:absolute; left:-9999px;" alt="" /></div>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKPFFJFZ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+</body>
+</html>

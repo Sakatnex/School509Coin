@@ -1,0 +1,232 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #151313;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.score {
+    color: #ffffff;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+h2 {
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.circle img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 16px 0px rgba(138, 143, 254, 0.5);
+    transition: transform 0.2s ease;
+    --tiltX: 0deg;
+    --tiltY: 0deg;
+    transform: rotateX(var(--tiltX)) rotateY(var(--tiltY));
+}
+
+.plus-one {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 0px 0px 4px rgba(234, 182, 64, 0.25);
+    font-size: 24px;
+    font-weight: 800;
+    background: linear-gradient(180deg, #cac9c3 0%, #7e7873 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    pointer-events: none;
+    user-select: none;
+    animation: move-up 2s forwards;
+}
+
+@keyframes move-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+.gray-out {
+    filter: grayscale(100%);
+    pointer-events: none;
+}
+
+#energy-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #cac9c3;
+    font-family: 'Roboto', sans-serif;
+    width: 200px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+#energy-text::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(https://png.klev.club/uploads/posts/2024-04/png-klev-club-laog-p-emodzi-molniya-png-8.png);
+    background-size: cover;
+    margin-right: 10px;
+    transition: all 0.2s ease;
+}
+
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1b1f22; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px; 
+    z-index: 1000; 
+    flex-wrap: wrap; 
+}
+
+.sticky-footer a {
+    color: white; 
+    text-decoration: none; 
+    padding: 5px 10px; 
+    font-size: 14px; 
+}
+
+.divider {
+    width: 1px; 
+    background-color: white; 
+    height: 15px;
+    margin: 0 5px; 
+}
+
+a {
+    font-family: 'Roboto', sans-serif;
+}
+
+.wh {
+    color: #cac9c3;
+}
+
+#player-container {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1b1f22;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000; 
+}
+
+audio {
+    margin-left: 10px;
+    width: 100%; 
+    max-width: 600px; 
+}
+
+#track-title {
+    margin: 0;
+    font-size: 1.2em;
+    text-align: center; 
+}
+
+button {
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    margin-top: 5px;
+    background-color: #141313;
+    border-radius: 25px;
+    color: #cac9c3;
+}
+
+#copy-container, #copy-container1, #copy-container2, #copy-container3, #copy-container4 {
+    border: 2px solid #007BFF; 
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #e7f0ff; 
+    text-align: center;
+    cursor: pointer; 
+    transition: background-color 0.3s;
+    margin-bottom: 10px; 
+}
+
+#copy-container:hover, #copy-container1:hover, #copy-container2:hover, #copy-container3:hover, #copy-container4:hover {
+    background-color: #d0e1ff; 
+}
+
+a {
+    color: #cac9c3;
+}
+
+.d {
+    color: #d81919;
+    width: 250px;
+}
+
+.c {
+    text-align: center;
+    max-width: 350px;
+}
+
+@media (min-width: 600px) {
+    #player-container {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #track-title {
+        margin-right: 10px; 
+    }
+}
+
+@media (max-width: 600px) {
+    .sticky-footer a {
+        font-size: 12px; 
+        padding: 5px; 
+    }
+    .divider {
+        height: 10px; 
+    }
+}
