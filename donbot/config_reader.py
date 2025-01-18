@@ -39,16 +39,14 @@ class Config(BaseModel):
 
 @lru_cache
 def parse_config_file() -> dict:
-    # Check if there's ENV variable that overrides config file path
     if environ.get('CONFIG_FILE_PATH') is not None:
-        file_path = environ.get('CONFIG_FILE_PATH') # overriden config file name
+        file_path = environ.get('CONFIG_FILE_PATH') 
     else:
-        file_path = "config.toml" # default config file name
+        file_path = "config.toml"
 
     if file_path is None:
         error = "Could not find settings file"
         raise ValueError(error)
-    # Parse config as TOML
     with open(file_path, "rb") as file:
         config_data = load(file)
     return config_data
