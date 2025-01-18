@@ -9,8 +9,6 @@ def get_fluent_localization() -> FluentLocalization:
     :return: FluentLocalization object
     """
 
-    # Checks to make sure there's
-    # the correct file in the correct directory
     locale_dir = Path(__file__).parent.joinpath("l10n")
     if not locale_dir.exists():
         error = "'l10n' directory not found"
