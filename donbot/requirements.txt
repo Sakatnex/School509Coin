@@ -1,5 +1,5 @@
 aiogram
-# uvloop # Раскомментируй если используйте Linux
+# uvloop # Раскомментируйте если используйте Linux
 ujson
 aiohttp[speedups]
 aiohttp[speedups]==3.9.5 
