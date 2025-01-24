@@ -54,7 +54,6 @@ donate-refund-code-not-found =
 donate-refund-already-refunded =
     Рефанд по этой транзакции уже был ранее произведен.
 
-# no html etc. (msg for callback answer)
 donate-cancel-payment =
     😢 Донат отменен.
 
