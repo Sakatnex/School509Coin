@@ -22,7 +22,7 @@ async def cmd_donate(message: Message, command: CommandObject, l10n: FluentLocal
     kb = InlineKeyboardBuilder()
     kb.button(
         text=l10n.format_value("donate-button-pay", {"amount": amount}),
-        pay=True # важный параметр!
+        pay=True
     )
     kb.button(
         text=l10n.format_value("donate-button-cancel"),
