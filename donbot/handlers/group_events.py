@@ -7,14 +7,11 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 from fluent.runtime import FluentLocalization
 
-# Declare router
 router = Router()
-router.message.filter(F.chat.type == "group") # process group events only
+router.message.filter(F.chat.type == "group") 
 
-# Declare logger
 logger = structlog.get_logger()
 
-# Declare handlers
 @router.message(F.content_type.in_({'new_chat_members', 'left_chat_member'}))
 async def on_user_join_or_left(message: Message):
     """
