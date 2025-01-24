@@ -21,7 +21,6 @@ def get_fluent_localization() -> FluentLocalization:
         error = "locale.txt file not found"
         raise FileNotFoundError(error)
 
-    # Create the necessary objects and return a FluentLocalization object
     l10n_loader = FluentResourceLoader(
         str(locale_file.absolute()),
     )
