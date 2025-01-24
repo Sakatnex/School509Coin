@@ -4,8 +4,6 @@ from aiogram import BaseMiddleware
 from aiogram.types import Message
 from fluent.runtime import FluentLocalization
 
-
-# Inner-middleware for message
 class L10nMiddleware(BaseMiddleware):
     def __init__(
         self,
